@@ -11,16 +11,18 @@ import org.springframework.stereotype.Component;
 public class Keeper implements Employee {
     private final Client client;
 
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    @Override
+    public String getName() {
+        return "";
+    }
     @Autowired
     public Keeper(Client client){
         this.client = client;
     }
-//    @RequestMapping("/")
-@Override
-public void hello(){
-        System.out.println("Hello Keeper");    }
 
-    public void clientGreet(){
-        client.hello();
-    }
 }
